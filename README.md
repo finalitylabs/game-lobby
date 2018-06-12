@@ -1,4 +1,4 @@
-# Channel Explorer
+# Game Lobby
 
 ### getting started
 
