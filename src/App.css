@@ -1,0 +1,561 @@
+* select {
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+#app-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+
+.main-wrapper {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  min-width: 500px;
+}
+
+.main-inner {
+  width: 80%;
+}
+
+.App {
+  text-align: center;
+}
+
+.profile-container {
+
+  display: flex;
+  flex-shrink: none;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+  height: 100vh;
+  min-height: 700px;
+  width: 15%;
+  min-width: 250px;
+}
+
+.address-form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.address-form input {
+  width: 100%;
+}
+
+.keys {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-select {
+  height: 30px;
+  font-size: 1em;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+ 
+  background: lightgray;
+}
+
+.account {
+  text-align: center;
+}
+
+.account p {
+  overflow: scroll;
+}
+
+.account a {
+  text-decoration: none;
+}
+
+.account div {
+  
+  margin-bottom: 10px;
+  padding: 10px;
+  background: steelblue;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.thick {
+  border-bottom: 4px solid;
+}
+
+.dotted {
+  border-bottom: 4px dotted;
+}
+
+.indent {
+  padding-left: 20px;
+}
+
+.title-value {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+
+.pic-box {
+  align-self: center;
+  margin-top: 20px;
+  min-height: 100px;
+  width: 100px;
+  background-image: url('./assets/profile-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav-container {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  min-width: 600px;
+  color: white;
+  background: #333;
+
+
+}
+
+.nav-container ul {
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+  
+}
+
+.nav-container li{
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.explorer {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.explorer h1{
+  text-align: center;
+}
+
+.exp-title-new {
+  margin: 30px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  align-self: center;
+}
+
+
+
+.exp-title-new div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  background: steelblue;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.red {
+  padding: 1em;
+  color: white;
+  font-size: 1.1em;
+  background: #f44242;
+}
+
+.blue {
+  margin: 10px;
+  padding: 0.5em;
+  color: white;
+  font-size: 1.1em;
+  background: steelblue;
+  
+}
+
+.exp-data-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.exp-data-table table {
+  
+  width: 100%;
+  min-width: 400px;
+  table-layout: auto;
+  
+}
+
+.exp-data-table td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.channel-container {
+  margin-top: 2em;
+
+}
+
+.channel-container h1 {
+  text-decoration: underline;
+  padding: 2em;
+}
+
+.agreements {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.agreements button {
+  width: 100px;
+  height: 40px;
+  background: rgb(50, 171, 247);
+  font-size: 1em;
+  color: white;
+  margin: 1em;
+}
+
+.channel-data-table {
+  width: 100%; 
+}
+
+.channel-data-table table{
+
+  text-align: left;
+  table-layout: auto;
+  width: 100%;
+  padding: 1em;
+}
+
+.channel-pages {
+  display: flex;
+  float: right;
+  margin: 1em;
+  justify-content: center;
+}
+
+.channel-pages div {
+  width: 30px;
+  height: 30px;
+  background: rgb(50, 171, 247);
+  color: white;
+}
+
+.create-agreement {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.create-agreement h1 {
+  text-align: center;
+}
+
+.create-agreement form{
+  display: flex;
+  flex-direction: column;
+}
+
+.create-agreement button{
+  padding: 1em;
+  margin: 1em;
+  width: 200px;
+  background: steelblue;
+  cursor: pointer;
+  color: white;
+  padding: 1em;
+}
+
+.agreement-form {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.agreement-form input {
+  width: 400px;
+  float: right;
+  font-size: 1em;
+}
+
+.agreement-form select {
+  width: 400px;
+  float: right;
+  font-size: 0.8em;
+}
+
+.agreement-form button {
+  font-size: 0.6em;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-agreement label{
+  padding: 1em;
+}
+
+.pending-agreement {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.pending-agreement h1 {
+  text-align: center;
+}
+
+.pending-agreement form{
+  display: flex;
+  flex-direction: column;
+}
+
+.pending-agreement-form p {
+  float: right;
+  font-size: 1em;
+}
+
+.pending-agreement button{
+  padding: 1em;
+  margin: 1em;
+  width: 200px;
+  height: 100px;
+  background: steelblue;
+  cursor: pointer;
+  color: white;
+  padding: 1em;
+}
+
+.pending-agreement-form {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.decline-agree {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pending-agreement-form button {
+  font-size: 0.6em;
+  height: 100%;
+}
+
+.agreement-detail-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  width: 70%;
+}
+
+.agreement-detail-form h1 {
+  text-align: center;
+}
+
+.agreement-detail-form form{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.agreement-detail-form p {
+  float: right;
+  font-size: 1em;
+ 
+}
+
+.channel-comp{
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin: 40px;
+}
+
+.channel-comp h1 {
+  margin-bottom: 50px;
+}
+
+.channel-comp select {
+  width: 200px;
+  height: 30px;
+  font-size: 1em;
+  float: right;
+}
+
+.channel-address-1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.channel-address-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.channel-comp input {
+  width: 400px;
+  float: right;
+  font-size: 1em;
+}
+
+.channel-select-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channel-select-button {
+  background: steelblue;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  float: right;
+}
+
+.channel-send {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.eth-send-state {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eth-amount {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eth-amount input {
+  width: 300px;
+  height: 30px;
+  line-height: 45px;
+  font-size: 1.5em;
+}
+
+.channel-send-button {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  margin-top: 2em;
+  width: 150px;
+  height: 50px;
+  background: steelblue;
+  cursor: pointer;
+  color: white;
+}
+
+.tokens-comp{
+  width: 100%;
+  height: 100%;
+  background: red;
+  font-size: 78pt;
+}
+
+.objects-comp{
+  width: 100%;
+  height: 100%;
+  background: gray;
+  font-size: 78pt;
+}
+
+.settle-modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  background: #f44242;
+  color: white;
+  box-shadow: 5px 5px 15px 10px rgba(0,0,0,0.3);
+}
+
+.modal-buttons {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-buttons h2 {
+  padding: 10px;
+  border: 2px solid white;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.modal-buttons h2:hover {
+  background: white;
+  color: #f44242;
+}
+
+
+
+
+
+
