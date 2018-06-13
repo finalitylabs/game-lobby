@@ -6,7 +6,7 @@ import Store from "./models/Store";
 import { Provider, observer } from "mobx-react";
 
 import Main from "./components/Main";
-// import SettleModal from "./components/SettleModal";
+// import Login from './components/Login';
 
 @observer
 class App extends React.Component<{ store: typeof Store.Store.Type }> {
@@ -19,7 +19,7 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
     return (
       <Provider store={this.props.store}>
         <div id="app-wrapper">
-          {/* <SettleModal /> */}
+          {/* <Login /> */}
           <div className='nav-container'>
             <select className="profile-select">
               <option>Rinkeby Test Network</option>

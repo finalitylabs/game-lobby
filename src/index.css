@@ -4,4 +4,5 @@ body {
   font-family: sans-serif;
   color: white;
   background: linear-gradient(-45deg, #000 0%,#222 80%);
+  overflow: scroll;
 }

@@ -1,21 +1,15 @@
 import * as React from 'react';
 import Explorer from '../components/Explorer';
-import AgreementDetail from '../components/AgreementDetail';
-import CreateAgreement from '../components/CreateAgreement';
-import Channel from '../components/Channel';
-// import PendingAgreement from '../components/PendingAgreement';
-import RevokeAgreement from '../components/RevokeAgreement';
-import ChannelDetail from '../components/ChannelDetail';
+
+import Lobby from '../components/Lobby';
+import ChatRoom from '../components/ChatRoom';
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store'
 
 const children = {Explorer, 
-                  CreateAgreement, 
-                  RevokeAgreement, 
-                  AgreementDetail, 
-                  Channel, 
-                  ChannelDetail};
+                  Lobby,
+                  ChatRoom};
 
 @observer
 class ExplorerMain extends React.Component<any, any> {
@@ -31,15 +25,7 @@ class ExplorerMain extends React.Component<any, any> {
                 {
                     React.createElement(child, { store: this.props.store })
                 }
-                
-
-                {/* <Explorer />
-                <CreateAgreement />
-                <PendingAgreement />
-                <RevokeAgreement />
-                <AgreementDetail />
-                <Channel />
-                <ChannelDetail /> */}
+            
             </div>
         );
     }
