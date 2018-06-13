@@ -1,5 +1,6 @@
 declare global {
   const Gun: any;
+  const _: any;
 }
 
 type User = any;
@@ -7,18 +8,26 @@ type Gun = any;
 
 class GunService {
   public connected: boolean = false;
-  // private dbSalt: string = "Alice";
   public user: any = null;
   private gun: any = null;
   private loggedIn: boolean = false;
-  constructor() {
+
+  // param gun: allow passing an existing Gun connection optionally
+  constructor(gun?: any) {
     this.connected = false;
+    if (gun) {
+      this.gun = gun;
+      this.connected = true;
+      this.user = this.gun.user();
+    }
     // location.origin +
     //var chat = gun.get('converse/' + location.hash.slice(1));
   }
-  public connect(): void {
-    console.log("GunService connecting");
-    this.gun = Gun("http://gundb-env.yyb3qd5gma.us-east-1.elasticbeanstalk.com/gun");
+  public connect(url?: string): void {
+    if (this.gun) return;
+    const path = url || "http://gundb-env.yyb3qd5gma.us-east-1.elasticbeanstalk.com/gun";
+    console.log("GunService connecting to " + path);
+    this.gun = Gun(path);
     this.user = this.gun.user();
     this.gun.get("status").put({ connected: "true" }, (ack: any) => {
       console.log("GunService connected");
