@@ -21,13 +21,15 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
         <div id="app-wrapper">
           {/* <SettleModal /> */}
           <div className='nav-container'>
-                <ul>
-                    <li><h2 onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('ChannelMain', 'CreateChannel')}>ETH</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Tokens', '')}>Tokens</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Objects', '')}>Objects</h2></li>
-                </ul>
+            <select className="profile-select">
+              <option>Rinkeby Test Network</option>
+              <option>Localhost:XXXX</option>
+            </select>
+            <div className='top-profile'>
+              <h3>Alice</h3>
+              <div className="pic-box"/>
             </div>
+          </div>
           
           <div className="main-wrapper">
             <Main store={this.props.store} />

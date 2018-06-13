@@ -16,7 +16,6 @@ import AgreementDetail from './AgreementDetail';
 import CreateAgreement from './CreateAgreement';
 import ChannelDetail from './ChannelDetail';
 import CreateChannel from './CreateChannel';
-import Profile from "./Profile";
 import CreateTrans from './CreateTrans';
 import TransMain from '../containers/TransMain';
 
@@ -46,7 +45,11 @@ class Main extends React.Component<{ store: typeof Store.Store.Type }> {
 
     return (
       <div className="main-wrapper">
-        <Profile store={this.props.store} />
+        <div className='tabs'>
+          <div className='tab'><h3>Profile</h3></div>
+          <div className='tab'><h3>Enter Chat</h3></div>
+          <div className='tab'><h3>Play Game</h3></div>
+        </div>
         <div className='main-inner'>{React.createElement(child, { store: this.props.store })}</div>
       </div>
     );
