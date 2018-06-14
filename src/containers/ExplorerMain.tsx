@@ -3,13 +3,15 @@ import Explorer from '../components/Explorer';
 
 import Lobby from '../components/Lobby';
 import ChatRoom from '../components/ChatRoom';
+import UserProfile from '../components/UserProfile';
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store'
 
 const children = {Explorer, 
                   Lobby,
-                  ChatRoom};
+                  ChatRoom,
+                  UserProfile};
 
 @observer
 class ExplorerMain extends React.Component<any, any> {
