@@ -6,11 +6,13 @@ class SendModal extends React.Component {
     public render() {
         return (
             <div className='send-modal'>
-                <div className='cancel'/>
+                <div className='cancel'><h1>×</h1></div>
                 <div className='send-inner'>
                     <h3>Send to Bob</h3>
-                    <h4>Amount to send</h4>
-                    <input type="text" placeholder='XX ETH'/>
+                    <div>
+                        <h4>Amount to send</h4>
+                        <input type="text" placeholder='XX ETH'/>
+                    </div>
                     <div className='send-button'>Send</div>
                 </div>
             </div>

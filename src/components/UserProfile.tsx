@@ -9,7 +9,7 @@ class UserProfile extends React.Component<any, any> {
     public render() {
         return (
             <div className='explorer'>
-                <h2>Profile</h2>
+                <h2>Bob's Profile</h2>
                 <p><strong>Username:</strong> Bob</p>
                 <p><strong>Wallet Address:</strong> 0x...</p>
                 

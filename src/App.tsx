@@ -6,6 +6,7 @@ import Store from "./models/Store";
 import { Provider, observer } from "mobx-react";
 
 import Main from "./components/Main";
+// import SendModal from "./components/SendModal";
 // import Login from './components/Login';
 
 @observer
@@ -20,6 +21,7 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
       <Provider store={this.props.store}>
         <div id="app-wrapper">
           {/* <Login /> */}
+          {/* <SendModal /> */}
           <div className='nav-container'>
             <select className="profile-select">
               <option>Rinkeby Test Network</option>
