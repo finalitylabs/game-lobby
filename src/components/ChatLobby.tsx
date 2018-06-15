@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class Lobby extends React.Component {
+class ChatLobby extends React.Component {
     public render() {
         return (
             <div className='lobby'>
@@ -41,4 +41,4 @@ class Lobby extends React.Component {
     }
 }
 
-export default Lobby;
+export default ChatLobby;
