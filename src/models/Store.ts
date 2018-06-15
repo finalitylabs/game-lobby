@@ -25,7 +25,7 @@ const Store = types
     page: "ExplorerMain",
     page_stateA: "",
     page_stateB: "",
-    subpage: "Game",
+    subpage: "UserProfile",
     netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
     prvkey: "0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87"
   })
