@@ -1,5 +1,8 @@
 import * as React from "react";
 
+import ProfileMain from "../containers/ProfileMain";
+import ChatMain from '../containers/ChatMain';
+import GameMain from '../containers/GameMain';
 
 
 import Store from "../models/Store";
@@ -8,14 +11,15 @@ import Store from "../models/Store";
 
 // const { RouterModel, syncHistoryWithStore } = SRouter
 import { observer } from "mobx-react";
-import ExplorerMain from "../containers/ExplorerMain";
 
 
 
 
 
 
-const children = { ExplorerMain };
+const children = { ProfileMain,
+                   ChatMain,
+                   GameMain };
 
 @observer
 class Main extends React.Component<{ store: typeof Store.Store.Type }> {

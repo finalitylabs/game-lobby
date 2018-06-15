@@ -1,15 +1,19 @@
 import * as React from 'react';
-import Eth from '../components/Eth';
-import CreateChannel from '../components/CreateChannel';
+import ChatLobby from '../components/ChatLobby';
+import ChatRoom from '../components/ChatRoom';
+import UserProfile from '../components/UserProfile';
+
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store';
 
-const children = {Eth,
-    CreateChannel};
+const children = {ChatLobby,
+                  ChatRoom,
+                  UserProfile
+                  };
 
 @observer
-class ChannelMain extends React.Component<any, any> {
+class ChatMain extends React.Component<any, any> {
     
 
     public render() {
@@ -29,5 +33,5 @@ class ChannelMain extends React.Component<any, any> {
     }
 }
 
-export default ChannelMain;
+export default ChatMain;
 

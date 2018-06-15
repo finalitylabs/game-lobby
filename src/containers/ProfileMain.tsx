@@ -1,26 +1,13 @@
 import * as React from 'react';
-import Explorer from '../components/Explorer';
-
-import ChatLobby from '../components/ChatLobby';
-import ChatRoom from '../components/ChatRoom';
-import UserProfile from '../components/UserProfile';
-import DirectMessage from '../components/DirectMessage';
-import GameLobby from '../components/GameLobby';
-import Game from '../components/Game';
+import Profile from '../components/Profile';
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store'
 
-const children = {Explorer, 
-                  ChatLobby,
-                  ChatRoom,
-                  UserProfile,
-                  DirectMessage,
-                  GameLobby,
-                  Game};
+const children = { Profile };
 
 @observer
-class ExplorerMain extends React.Component<any, any> {
+class ProfileMain extends React.Component<any, any> {
     public render() {
         const key = this.props.store.subpage;
 
@@ -39,4 +26,4 @@ class ExplorerMain extends React.Component<any, any> {
     }
 }
 
-export default ExplorerMain;
+export default ProfileMain;

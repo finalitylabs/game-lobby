@@ -1,15 +1,16 @@
 import * as React from 'react';
-import Eth from '../components/Eth';
-import CreateTrans from '../components/CreateTrans';
+import GameLobby from '../components/GameLobby';
+import Game from '../components/Game';
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store';
 
-const children = {Eth,
-    CreateTrans};
+const children = {GameLobby,
+                  Game,
+                  };
 
 @observer
-class TransMain extends React.Component<any, any> {
+class GameMain extends React.Component<any, any> {
     
 
     public render() {
@@ -29,5 +30,5 @@ class TransMain extends React.Component<any, any> {
     }
 }
 
-export default TransMain;
+export default GameMain;
 

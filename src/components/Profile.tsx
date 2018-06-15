@@ -1,74 +1,110 @@
-import * as React from "react";
-import "../App.css";
-import Store from "../models/Store";
-import { default as l2 } from "../services/Layer2Service";
+import * as React from 'react';
 
-import { observer } from 'mobx-react';
+// import { default as l2 } from "../services/Layer2Service";
 
-@observer
-class Profile extends React.Component<{ store: typeof Store.Store.Type }, any> {
-  public render() {
-    if(!this.state) return (<div className="profile-container"/>)
-    return (
-      <div className="profile-container">
-        <div className='keys'>
-          <form className='address-form'>
-            <input type='text' placeholder='Your address'/>
-            <input type='text' placeholder='Private Key' />
-            <button type='submit'>Submit</button>
-          </form>
-        </div>
-        <select className="profile-select">
-          <option value='selected' disabled={true}>
-            Select Network
-          </option>
-          <option>Rinkeby Test Network</option>
-          <option>Localhost:XXXX</option>
-        </select>
-        <div className="pic-box" />
-        <div className="account">
-          <h3>Account</h3>
-          <p>{this.props.store.netkey}</p>
-          <a href="https://etherscan.io/" rel="noopener noreferrer" target="_blank">
-            <div>View on Etherscan</div>
-          </a>
-        </div>
-        <div className="state thick">
-          <h3>State</h3>
-        </div>
-        <div className="title-value thick">
-          <h3>ETH</h3>
-          <p>{this.state.balance || 0}</p>
-        </div>
-
-        <div className="dotted">
-          <h3>Tokens</h3>
-        </div>
-
-        <div className="title-value dotted">
-          <p className="indent">Spank</p>
-          <p>XX</p>
-        </div>
-
-        <div className="title-value thick">
-          <p className="indent">FNT</p>
-          <p>XX</p>
-        </div>
-
-        <div className="dotted">
-          <h3>Objects</h3>
-        </div>
-        <div className="title-value dotted">
-          <p className="indent">Heroes</p>
-          <p>XX</p>
-        </div>
-      </div>
-    );
-  }
-      public async componentDidMount() {
-        const balance = await l2.getBalance(this.props.store.netkey);
-        this.setState({balance});
+class Profile extends React.Component<any, any> {
+    public stateName(obj:any):string {
+        if(obj.closed === true) return "Closed";
+        if(obj.inDispute) return "In Dispute";
+        return "Open Pending";
     }
+    public render() {
+        // const header = this.getHeader();
+
+        // if(!this.state || !this.state.agreements) return (<div className='explorer'/>);
+        // if(this.state.agreementIds.length === 0) return (<div className='explorer'>
+        //     {header}
+        //     <div className='exp-data-table'><h2>no agreements</h2></div>
+        // </div>);
+
+        // const ids:[string]= this.state.agreementIds as [string];
+        // const ms:any = this.state.agreements;
+        // console.log(ms[ids[0]]);
+
+        // console.log('agreements', this.state.agreementIds)
+        // const agreementList = ids.map((id, index) => (
+        //     <tr key={id}>
+        //         <td 
+        //             style={{ cursor: 'pointer'}}
+        //             onClick={() => this.props.store.setPage('AgreementDetail', '', id)}><a href="#">{id}</a></td>
+        //         <td>{ms[id].partyB}</td>
+        //         <td>{ms[id].address}</td>
+        //         <td>X days X hrs</td>
+        //         <td>X {ms[id].types[0]}</td>
+        //         <td>{this.stateName(ms[id])}</td>
+        //         <td>(!)</td>
+        //     </tr>)
+        // );
+
+        
+
+        return (
+            <div className='explorer'>
+                <h2>Profile</h2>
+                <p><strong>Username:</strong> Alice</p>
+                <p><strong>Wallet Address:</strong> 0x...</p>
+                <p><strong>Account Balance:</strong> XX ETH</p>
+                <h2>Game Stats</h2>
+                <table>
+                    <tr>
+                        <th>Hero Class</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>Win %</th>
+                    </tr>
+                    <tr>
+                        <td>Warrior</td>
+                        <td>25</td>
+                        <td>10</td>
+                        <td>71%</td>
+                    </tr>
+                </table>
+
+                <h2>Transactions</h2>
+                <table>
+                    <tr>
+                        <th>Tx Hash</th>
+                        <th>Age</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Memo</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>0x...</td>
+                        <td>X days X hours</td>
+                        <td>Alice</td>
+                        <td>Bob</td>
+                        <td>Game Won</td>
+                        <td>XX ETH</td>
+                        <td>Settle</td>
+                    </tr>
+                    <tr>
+                        <td>0x...</td>
+                        <td>X days X hours</td>
+                        <td>Bon</td>
+                        <td>Alice</td>
+                        <td>Game Lost</td>
+                        <td>XX ETH</td>
+                        <td>Closed</td>
+                    </tr>
+                </table> 
+            </div>
+        );
+    }
+    // public async componentDidMount() {
+    //     const agreements = await l2.getAgreements();
+    //     const agreementIds = Object.keys(agreements);
+    //     this.setState({agreements, agreementIds});
+    // }
+    // private getHeader() {
+    //     return [(<h1>Explorer</h1>),
+    //         (<div className='exp-title-new'>
+    //             <h2>Agreements</h2>
+    //             <div onClick={() => this.props.store.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
+    //         </div>)];
+    // }
 }
 
 export default Profile;
