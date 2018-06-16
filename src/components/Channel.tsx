@@ -26,7 +26,7 @@ class Channel extends React.Component<any, any> {
                         <thead>
                             <tr>
                                 
-                                <th onClick={() => this.props.store.setPage('Explorer','ChannelDetail')}>Channel</th>
+                                <th onClick={() => this.props.store.app.setPage('Explorer','ChannelDetail')}>Channel</th>
                                 <th>TXHash</th>
                                 <th>Age</th>
                                 <th>From</th>

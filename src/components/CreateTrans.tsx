@@ -1,9 +1,9 @@
 import * as React from "react";
-import Store from "../models/Store";
+import { RootStore} from '../models/Store';
 import '../App.css';
 
 
-class CreateTrans extends React.Component<{ store: typeof Store.Store.Type }, any> {
+class CreateTrans extends React.Component<{ store: RootStore }, any> {
     constructor(props: any) {
         super(props);
         this.state = { balanceA: "0.0002", balanceB: "0.0002" };
@@ -80,8 +80,8 @@ class CreateTrans extends React.Component<{ store: typeof Store.Store.Type }, an
         //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
         const options = {
           ID: id,
-          agreementID: "" + this.props.store.page_stateA, // .agreementID,
-          partyA: this.props.store.netkey,
+          agreementID: "" + this.props.store.app.page_stateA, // .agreementID,
+          partyA: this.props.store.app.netkey,
           partyB: "" + s.partyB,
           balanceA: "" + s.balanceA,
           balanceB: "" + s.balanceB,
@@ -104,9 +104,9 @@ class CreateTrans extends React.Component<{ store: typeof Store.Store.Type }, an
           return;
         }
         // console.log('createAgreement options', options);
-        await this.props.store.createChannel(options);
+        await this.props.store.app.createChannel(options);
         //const getagreement = await this.props.store
-        //const Store = this.props.store;
+        //const Store = this.props.store.app.
     
         alert("agreement was submitted");
       }

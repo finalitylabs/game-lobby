@@ -24,7 +24,7 @@ class Eth extends React.Component<any, any> {
                     <option>2</option>
                 </select>
                 
-                    <button onClick={()=>this.props.store.setPage('EthMain', 'EthCreateChannel')}>+</button>
+                    <button onClick={()=>this.props.store.app.setPage('EthMain', 'EthCreateChannel')}>+</button>
                 </div>
                 <div className='eth-send'>
                     <div className='eth-send-state'>

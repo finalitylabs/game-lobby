@@ -4,15 +4,20 @@ import App from "./App";
 import "./index.css";
 import { default as l2 } from "./services/Layer2Service";
 import { default as GS } from "./services/GunService";
+import { HistoryAdapter } from 'mobx-state-router';
+import { history } from './utils/history';
 
 // import registerServiceWorker from './registerServiceWorker';
 
-import Store from "./models/Store";
+import {RootStore} from "./models/Store";
+
+const store = new RootStore();
+const historyAdapter = new HistoryAdapter(store.router, history);
+historyAdapter.observeRouterStateChanges();
 
 async function start():Promise<void> {
-    const store = Store.Store.create({ balance: 0, transactions: [] });
-    await l2.connect(store.prvkey, 'Alice')
-
+    // Observe history changes
+    await l2.connect(store.app.prvkey, 'Alice')
     await GS.connect();
     
     // For testing connection only

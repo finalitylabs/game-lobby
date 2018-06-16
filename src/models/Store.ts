@@ -1,5 +1,9 @@
 import { flow, types } from "mobx-state-tree";
 import { default as l2, Agreement, Channel } from "../services/Layer2Service";
+import { RouterState, RouterStore } from "mobx-state-router";
+import { routes } from "./routes";
+
+const notFound = new RouterState("notFound");
 
 //let l2: Layer2Service | null = null;
 //let localstore: LocalForage | null = null;
@@ -17,6 +21,7 @@ let prevPage: string = "";
 let prevSubpage: string = "";
 
 // test eth netid "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f"
+// pages: ProfileMain, ChatMain, GameMain
 const Store = types
   .model({
     balance: types.number,
@@ -25,7 +30,7 @@ const Store = types
     page: "ChatMain",
     page_stateA: "",
     page_stateB: "",
-    subpage: "ChatRoom",
+    subpage: "",
     netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
     prvkey: "0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87"
   })
@@ -70,4 +75,16 @@ const Store = types
     };
   });
 
-export default { Store, Transation };
+class RootStore {
+  public router = new RouterStore(this, routes, notFound);
+  public routerStore = this.router; // PATCH
+  public app = Store.create({ balance: 0, transactions: [] });
+
+  constructor(prvKey?: string) {
+    const params: any = { balance: 0, transactions: [] };
+    if (!!prvKey) params.prvkey = prvKey;
+    this.app = Store.create(params);
+  }
+}
+
+export { RootStore, Transation };
