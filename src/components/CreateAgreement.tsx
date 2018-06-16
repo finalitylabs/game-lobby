@@ -1,9 +1,9 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
-import Store from "../models/Store";
+import { RootStore} from '../models/Store';
 @inject("store")
 @observer
-class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }, any> {
+class CreateAgreement extends React.Component<{ store: RootStore }, any> {
   constructor(props:any) {
     super(props);
     this.state = {balanceA:"0.0002", balanceB: "0.0002"};
@@ -74,7 +74,7 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
     //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
     const options = {
       ID: id,
-      partyA: this.props.store.netkey,
+      partyA: this.props.store.app.netkey,
       partyB: s.partyB,
       balanceA: s.balanceA,
       balanceB: s.balanceB,
@@ -97,9 +97,9 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
       return;
     }
     // console.log('createAgreement options', options);
-    await this.props.store.createAgreement(options);
+    await this.props.store.app.createAgreement(options);
     //const getagreement = await this.props.store
-    //const Store = this.props.store;
+    //const Store = this.props.store.app.
 
     alert("agreement was submitted");
   }

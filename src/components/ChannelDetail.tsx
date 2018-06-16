@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { default as l2, Channel } from "../services/Layer2Service";
-import Store from "../models/Store";
+import { RootStore} from '../models/Store';
 
 import '../App.css';
 interface Props {
@@ -8,14 +8,14 @@ interface Props {
     transactions:any[]
 }
 
-class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, Props>{
+class ChannelDetail extends React.Component<{ store: RootStore }, Props>{
     constructor(props:any) {
         super(props)
         this.state = {channel:null, transactions:[] };
     }
     public render() {
-        const channelID = this.props.store.page_stateB;
-        const agreementID = this.props.store.page_stateA;
+        const channelID = this.props.store.app.page_stateB;
+        const agreementID = this.props.store.app.page_stateA;
         const channel = this.state.channel;
         if(!channel) return (<div className='explorer'/>);
         console.log('channel detail state', this.state);
@@ -36,15 +36,15 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
             <div className='explorer'>
                 <h1>
                     <span style={{cursor: 'pointer'}}
-                          onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer 
+                          onClick={() => this.props.store.app.setPage('ExplorerMain', 'Explorer')}>Explorer 
                     </span>/ 
                     <span style={{cursor: 'pointer'}}
-                          onClick={() => this.props.store.setPage('ExplorerMain', 'AgreementDetail')}> Agreement {agreementID} 
+                          onClick={() => this.props.store.app.setPage('ExplorerMain', 'AgreementDetail')}> Agreement {agreementID} 
                     </span>/ Channel {channelID}</h1>
                 <div className='exp-title-new'>
                     <h2>Channel 1 Information</h2>
                     <button className='blue'
-                            onClick={() => this.props.store.setPage('TransMain', 'CreateTrans')}>+ Transaction</button>
+                            onClick={() => this.props.store.app.setPage('TransMain', 'CreateTrans')}>+ Transaction</button>
                     <button className='red'>Settle</button>
                 </div>
                 <div>
@@ -97,7 +97,7 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
     }
     public async componentDidMount() {
         //const agreements = await l2.getAllChannels(;
-        const channelId = this.props.store.page_stateB; //Object.keys(agreements)[0];
+        const channelId = this.props.store.app.page_stateB; //Object.keys(agreements)[0];
         console.log('channelId', channelId);//, agreements[agreementId])
 
 

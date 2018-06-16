@@ -2,8 +2,9 @@ import * as React from 'react';
 import GameLobby from '../components/GameLobby';
 import Game from '../components/Game';
 
-import { observer } from 'mobx-react';
-import Store from '../models/Store';
+import { observer, inject } from 'mobx-react';
+
+import { RootStore} from '../models/Store';
 
 const children = {GameLobby,
                   Game,
@@ -14,11 +15,11 @@ class GameMain extends React.Component<any, any> {
     
 
     public render() {
-    const key = this.props.store.subpage;
+    const key = this.props.store.app.subpage || "GameLobby";
 
-        // {() => this.props.store.setPage('','')}
+        // {() => this.props.store.app.setPage('','')}
     if (!children[key]) throw new Error("component does not exist as directed by state:" + key);
-    const child: React.StatelessComponent<{ store: typeof Store.Store.Type }> = children[key];
+    const child: React.StatelessComponent<{ store: RootStore }> = children[key];
     return (
         <div>
             {
@@ -30,5 +31,5 @@ class GameMain extends React.Component<any, any> {
     }
 }
 
-export default GameMain;
+export default inject('store')(GameMain);
 

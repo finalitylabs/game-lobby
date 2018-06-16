@@ -3,7 +3,7 @@ import * as React from 'react';
 import '../App.css';
 
 import { default as l2, Channel } from "../services/Layer2Service";
-import Store from "../models/Store";
+import {RootStore} from "../models/Store";
 
 function stateName(obj:any):string {
     if(obj.closed === true) return "Closed";
@@ -13,7 +13,7 @@ function stateName(obj:any):string {
 }
 
 interface Props {
-    store: typeof Store.Store.Type
+    store: RootStore
 }
 class AgreementDetail extends React.Component<Props, {agreement:any, channels:Channel[]}> {
     constructor(props:any) {
@@ -35,7 +35,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
             {console.log("====", ch, ch.ID)}
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', agreementID, ch.ID)}><a href="#">{ch.ID}</a></td>
+                    onClick={() => this.props.store.app.setPage('ExplorerMain','ChannelDetail', agreementID, ch.ID)}><a href="#">{ch.ID}</a></td>
                 <td>{ch.partyB}</td>
                 <td>N/A</td>
                 <td>N/A</td>
@@ -52,11 +52,11 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
             <div className='explorer'>
                 <h1><span
                         style={{cursor: 'pointer'}}
-                        onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement {agreementID}</h1>
+                        onClick={() => this.props.store.app.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement {agreementID}</h1>
                 <div className='exp-title-new'>
                     <h2>Agreement 1 Information</h2>
-                    <button className='blue' onClick={()=>this.props.store.setPage('ChannelMain', 'CreateChannel', this.props.store.page_stateA)}>+ Channel</button>
-                    <button className='blue' onClick={()=>this.props.store.setPage('ChannelMain', 'CreateChannel', this.props.store.page_stateA)}>+ <br /> Virtual Channel</button>
+                    <button className='blue' onClick={()=>this.props.store.app.setPage('ChannelMain', 'CreateChannel', this.props.store.app.page_stateA)}>+ Channel</button>
+                    <button className='blue' onClick={()=>this.props.store.app.setPage('ChannelMain', 'CreateChannel', this.props.store.app.page_stateA)}>+ <br /> Virtual Channel</button>
                     <button className='red'>Settle</button>
                 </div>
                 <div>
@@ -103,7 +103,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
                             {/* <tr>
                                 <td 
                                     style={{cursor: 'pointer'}}
-                                    onClick={() => this.props.store.setPage('ExplorerMain', 'ChannelDetail')}>Channel 1</td>
+                                    onClick={() => this.props.store.app.setPage('ExplorerMain', 'ChannelDetail')}>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -156,7 +156,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
     }
     public async componentDidMount() {
         const agreements = await l2.getAgreements();
-        const agreementId = this.props.store.page_stateA; //Object.keys(agreements)[0];
+        const agreementId = this.props.store.app.page_stateA; //Object.keys(agreements)[0];
         console.log('agreementId', agreementId, agreements[agreementId])
 
 

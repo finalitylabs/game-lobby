@@ -2,12 +2,12 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import App from "./App";
 
-import Store from "./models/Store";
+import {RootStore} from "./models/Store";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
 
-  const store = Store.Store.create({ balance: 0, transactions: [] });
+  const store = new RootStore();
 
   ReactDOM.render(<App store={store} />, div);
   ReactDOM.unmountComponentAtNode(div);

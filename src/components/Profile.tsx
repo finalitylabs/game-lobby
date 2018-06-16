@@ -26,7 +26,7 @@ class Profile extends React.Component<any, any> {
         //     <tr key={id}>
         //         <td 
         //             style={{ cursor: 'pointer'}}
-        //             onClick={() => this.props.store.setPage('AgreementDetail', '', id)}><a href="#">{id}</a></td>
+        //             onClick={() => this.props.store.app.setPage('AgreementDetail', '', id)}><a href="#">{id}</a></td>
         //         <td>{ms[id].partyB}</td>
         //         <td>{ms[id].address}</td>
         //         <td>X days X hrs</td>
@@ -102,7 +102,7 @@ class Profile extends React.Component<any, any> {
     //     return [(<h1>Explorer</h1>),
     //         (<div className='exp-title-new'>
     //             <h2>Agreements</h2>
-    //             <div onClick={() => this.props.store.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
+    //             <div onClick={() => this.props.store.app.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
     //         </div>)];
     // }
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./App.css";
 
-import Store from "./models/Store";
+import {RootStore} from "./models/Store";
 
 import { Provider, observer } from "mobx-react";
 
@@ -10,15 +10,15 @@ import Main from "./components/Main";
 // import Login from './components/Login';
 
 @observer
-class App extends React.Component<{ store: typeof Store.Store.Type }> {
+class App extends React.Component<{ store: RootStore }> {
   /*public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
-    this.props.store.getBalance();
+    this.props.store.app.getBalance();
   }*/
 
   public render() {
     return (
-      <Provider store={this.props.store}>
+      <Provider store={this.props.store} rootStore={this.props.store}>
         <div id="app-wrapper">
           {/* <Login /> */}
           {/* <SendModal /> */}
@@ -34,7 +34,7 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
           </div>
           
           <div className="main-wrapper">
-            <Main store={this.props.store} />
+            <Main store={this.props.store}/>
           </div>
         </div>
       </Provider>
@@ -66,7 +66,7 @@ class App extends React.Component {
 export default App;
 
 {
-  /* <div>Balance {this.props.store.balance}</div>
+  /* <div>Balance {this.props.store.app.balance}</div>
 <form>
   <button type="submit" onClick={this.getBalance.bind(this)}>
     Get Balance
@@ -87,7 +87,7 @@ export default App;
 </form>
 
 <ul>
-  {this.props.store.todos.map((item, i) => {
+  {this.props.store.app.todos.map((item, i) => {
     return (
       <li key={i}>
         {item.text} &nbsp; &nbsp;
