@@ -15,9 +15,15 @@ import { RouterView, RouterLink } from 'mobx-state-router';
 
 const viewMap = {
   home: <ProfileMain />,
-  ProfileMain: <ProfileMain />,
-  ChatMain: <ChatMain />,
-  GameMain: <GameMain />,
+  Profile: <ProfileMain />,
+
+  ChatLobby: <ChatMain />,
+  ChatRoom: <ChatMain />,
+  ChatUserProfile: <ChatMain />,
+
+  GameLobby: <GameMain />,
+  GameJoin: <GameMain />,
+
   notFound: <PageNotFound />
 };
 
@@ -41,9 +47,9 @@ class Main extends React.Component<{ store: RootStore }> {
     return (
       <div className="main-wrapper">
         <div className='tabs'>
-          <RouterLink routeName="ProfileMain"><div className='tab'><h3>Profile</h3></div></RouterLink>
-          <RouterLink routeName="ChatMain"><div className='tab'><h3>Enter Chat</h3></div></RouterLink>
-          <RouterLink routeName="GameMain"><div className='tab'><h3>Play Game</h3></div></RouterLink>
+          <RouterLink routeName="Profile"><div className='tab'><h3>Profile</h3></div></RouterLink>
+          <RouterLink routeName="ChatLobby"><div className='tab'><h3>Enter Chat</h3></div></RouterLink>
+          <RouterLink routeName="GameLobby"><div className='tab'><h3>Play Game</h3></div></RouterLink>
         </div>
         <div className='main-inner'><RouterView routerStore={router} viewMap={viewMap} /></div>
       </div>

@@ -10,16 +10,28 @@ export const routes = [
     pattern: "/"
   },
   {
-    name: "ProfileMain",
+    name: "Profile",
     pattern: "/profile"
   },
   {
-    name: "ChatMain",
+    name: "ChatRoom",
+    pattern: "/chat/room/:id"
+  },
+  {
+    name: "ChatUserProfile",
+    pattern: "/chat/profile/:id"
+  },
+  {
+    name: "ChatLobby",
     pattern: "/chat"
   },
   {
-    name: "GameMain",
-    pattern: "/game"
+    name: "GameLobby",
+    pattern: "/games"
+  },
+  {
+    name: "GameJoin",
+    pattern: "/games/join/:id"
   },
   {
     name: "notFound",

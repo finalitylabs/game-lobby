@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import '../App.css';
-
+import { observer, inject } from "mobx-react";
 //TODO back button
-
+@observer
 class UserProfile extends React.Component<any, any> {
     public stateName(obj:any):string {
         if(obj.closed === true) return "Closed";
@@ -11,6 +11,10 @@ class UserProfile extends React.Component<any, any> {
         return "Open Pending";
     }
     public render() {
+        const { rootStore: { routerStore } } = this.props;
+        const { routerState: { params } } = routerStore;
+        console.log( params.id );
+
         return (
             <div className='explorer'>
                 <h2>Bob's Profile</h2>
@@ -41,4 +45,4 @@ class UserProfile extends React.Component<any, any> {
     }
 }
 
-export default UserProfile;
+export default inject('rootStore')(UserProfile);

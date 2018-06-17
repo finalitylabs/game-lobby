@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class PendingAgreement extends React.Component {
+class PendingAgreement extends React.Component<any, any> {
     
     public render() {
         return (
