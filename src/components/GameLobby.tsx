@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { RouterLink } from 'mobx-state-router';
 import '../App.css';
 
 class GameLobby extends React.Component {
@@ -31,7 +31,7 @@ class GameLobby extends React.Component {
                         <td>Bob</td>
                         <td>Warrior</td>
                         <td>3 ETH</td>
-                        <div className='chat-join-button'>Join</div>
+                        <RouterLink routeName="GameJoin" params={{id:"1"}}><div className='chat-join-button'>Join</div></RouterLink>
                     </tr>
                     <tr>
                         <td>Charlie</td>

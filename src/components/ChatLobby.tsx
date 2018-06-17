@@ -1,6 +1,8 @@
 import * as React from 'react';
-
-class ChatLobby extends React.Component {
+import { observer, inject } from "mobx-react";
+import { RouterLink } from 'mobx-state-router';
+@observer
+class ChatLobby extends React.Component<any, any> {
     public render() {
         return (
             <div className='lobby'>
@@ -21,17 +23,23 @@ class ChatLobby extends React.Component {
                     <tr>
                         <td>Wubba wubba dub dub</td>
                         <td>23</td>
-                        <div className='chat-join-button'>Join</div>
+                        <RouterLink routeName="ChatRoom" params={{id:"1"}}>
+                            <div className='chat-join-button'>Join</div>
+                        </RouterLink>
                     </tr>
                     <tr>
                         <td>Mr. Poopy Butthole</td>
                         <td>30</td>
-                        <div className='chat-join-button'>Join</div>
+                        <RouterLink routeName="ChatRoom" params={{id:"1"}}>
+                            <div className='chat-join-button'>Join</div>
+                        </RouterLink>
                     </tr>
                     <tr>
                         <td>schwifty</td>
                         <td>14</td>
-                        <div className='chat-join-button'>Join</div>
+                        <RouterLink routeName="ChatRoom" params={{id:"1"}}>
+                            <div className='chat-join-button'>Join</div>
+                        </RouterLink>
                     </tr>
                 </table>
                 
@@ -41,4 +49,4 @@ class ChatLobby extends React.Component {
     }
 }
 
-export default ChatLobby;
+export default inject('rootStore')(ChatLobby);

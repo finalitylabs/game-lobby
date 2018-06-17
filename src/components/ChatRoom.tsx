@@ -1,9 +1,15 @@
 import * as React from 'react';
 
 import '../App.css';
-
-class ChatRoom extends React.Component {
+import { observer, inject } from "mobx-react";
+import { RouterLink } from 'mobx-state-router';
+@observer
+class ChatRoom extends React.Component<any, any> {
     public render() {
+        const { rootStore: { routerStore } } = this.props;
+        const { routerState: { params } } = routerStore;
+        console.log( params.id );
+
         return (
             <div className='chatroom'>
                 <div className="chat-header">
@@ -26,9 +32,9 @@ class ChatRoom extends React.Component {
                         <h2>Users</h2>
                         <hr />
                         <ul>
-                            <li>Alice</li>
-                            <li>Bob</li>
-                            <li>Nathan</li>
+                            <li><RouterLink routeName="ChatUserProfile" params={{id:"1"}}>Alice</RouterLink></li>
+                            <li><RouterLink routeName="ChatUserProfile" params={{id:"1"}}>Bob</RouterLink></li>
+                            <li><RouterLink routeName="ChatUserProfile" params={{id:"1"}}>Nathan</RouterLink></li>
                         </ul>
                     </div>
                 </div>
@@ -37,4 +43,4 @@ class ChatRoom extends React.Component {
     }
 }
 
-export default ChatRoom;
+export default inject('rootStore')(ChatRoom);
