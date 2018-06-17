@@ -4,10 +4,13 @@ import ProfileMain from "../containers/ProfileMain";
 import ChatMain from '../containers/ChatMain';
 import GameMain from '../containers/GameMain';
 import PageNotFound from '../components/PageNotFound';
+
+
 import { inject, observer } from 'mobx-react';
 
 import {RootStore} from "../models/Store";
 import { RouterView, RouterLink } from 'mobx-state-router';
+import BattleLobby from "./BattleLobby";
 // import * as SRouter from 'mst-react-router';
 
 

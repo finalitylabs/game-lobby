@@ -36,5 +36,9 @@ export const routes = [
   {
     name: "notFound",
     pattern: "/not-found"
+  },
+  {
+    name: "BattleLobby",
+    pattern: "/game/battlelobby"
   }
 ];
