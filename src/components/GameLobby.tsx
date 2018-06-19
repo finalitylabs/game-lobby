@@ -7,6 +7,7 @@ class GameLobby extends React.Component {
     return (
         <div className='lobby'>
                 <h1>Game Lobby</h1>
+                <RouterLink routeName="SpectateGameLobby"><div className='spectate-button'><h3>Spectate Game!</h3></div></RouterLink>
                 <div className='chat-name'>
                     <div className='chat-input'>
                     <h3>Hero Class:</h3>
@@ -27,6 +28,7 @@ class GameLobby extends React.Component {
                         <th>Hero Class</th>
                         <th>Wager Amount</th>
                     </tr>
+                    <tbody>
                     <tr>
                         <td>Bob</td>
                         <td>Warrior</td>
@@ -45,6 +47,7 @@ class GameLobby extends React.Component {
                         <td>1 ETH</td>
                         <div className='chat-join-button'>Join</div>
                     </tr>
+                    </tbody>
                 </table>
                 
 

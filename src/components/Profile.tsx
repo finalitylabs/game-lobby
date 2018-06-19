@@ -46,18 +46,20 @@ class Profile extends React.Component<any, any> {
                 <p><strong>Account Balance:</strong> XX ETH</p>
                 <h2>Game Stats</h2>
                 <table>
+                    <tbody>
                     <tr>
                         <th>Hero Class</th>
                         <th>Wins</th>
                         <th>Losses</th>
                         <th>Win %</th>
                     </tr>
-                    <tr>
-                        <td>Warrior</td>
-                        <td>25</td>
-                        <td>10</td>
-                        <td>71%</td>
-                    </tr>
+                        <tr>
+                            <td>Warrior</td>
+                            <td>25</td>
+                            <td>10</td>
+                            <td>71%</td>
+                        </tr>
+                    </tbody>
                 </table>
 
                 <h2>Transactions</h2>

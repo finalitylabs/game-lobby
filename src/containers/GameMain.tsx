@@ -6,11 +6,15 @@ import { observer, inject } from "mobx-react";
 import { RouterView } from "mobx-state-router";
 import { RootStore } from "../models/Store";
 import BattleLobby from "../components/BattleLobby";
+import SpectateGameLobby from "../components/SpectateGameLobby";
+import SpectateGameWindow from "../components/SpectateGameWindow";
 
 const viewMap: any = {
   GameLobby: <GameLobby />,
   GameJoin: <Game />,
-  BattleLobby: <BattleLobby />
+  BattleLobby: <BattleLobby />,
+  SpectateGameLobby: <SpectateGameLobby />,
+  SpectateGameWindow: <SpectateGameWindow />,
 };
 
 @observer

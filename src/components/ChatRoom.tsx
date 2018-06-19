@@ -14,7 +14,7 @@ class ChatRoom extends React.Component<any, any> {
             <div className='chatroom'>
                 <div className="chat-header">
                     <h1>Chat Room / Mr. Poopy Butthole</h1>
-                    <div className="chat-back">Back</div>
+                    <RouterLink routeName="ChatLobby"><div className="chat-back">Back</div></RouterLink>
                 </div>
                 <div className="chat-main">
                     <div className="chat-box">

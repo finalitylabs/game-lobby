@@ -16,10 +16,13 @@ class ChatLobby extends React.Component<any, any> {
                     
                 </div>
                 <table>
+                    <tbody>
+                    
                     <tr>
                         <th>Name</th>
                         <th>Number of Users</th>
                     </tr>
+                    
                     <tr>
                         <td>Wubba wubba dub dub</td>
                         <td>23</td>
@@ -41,6 +44,7 @@ class ChatLobby extends React.Component<any, any> {
                             <div className='chat-join-button'>Join</div>
                         </RouterLink>
                     </tr>
+                    </tbody>
                 </table>
                 
 

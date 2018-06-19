@@ -11,6 +11,8 @@ import { inject, observer } from 'mobx-react';
 
 import {RootStore} from "../models/Store";
 import { RouterView, RouterLink } from 'mobx-state-router';
+import SpectateGameLobby from "./SpectateGameLobby";
+import SpectateGameWindow from "./SpectateGameWindow";
 
 // const { RouterModel, syncHistoryWithStore } = SRouter
 
@@ -25,6 +27,8 @@ const viewMap = {
   GameLobby: <GameMain />,
   GameJoin: <GameMain />,
   BattleLobby: <BattleLobby />,
+  SpectateGameLobby: <SpectateGameLobby />,
+  SpectateGameWindow: <SpectateGameWindow />,
 
   notFound: <PageNotFound />
 };

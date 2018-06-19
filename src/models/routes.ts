@@ -40,5 +40,13 @@ export const routes = [
   {
     name: "BattleLobby",
     pattern: "/game/battlelobby"
-  }
+  },
+  {
+    name: "SpectateGameLobby",
+    pattern: "/game/spectategamelobby"
+  },
+  {
+    name: "SpectateGameWindow",
+    pattern: "/game/spectate/:id"
+  },
 ];
