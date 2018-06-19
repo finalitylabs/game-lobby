@@ -31,7 +31,7 @@ class GameLobby extends React.Component {
                         <td>Bob</td>
                         <td>Warrior</td>
                         <td>3 ETH</td>
-                        <RouterLink routeName="GameJoin" params={{id:"1"}}><div className='chat-join-button'>Join</div></RouterLink>
+                        <RouterLink routeName="BattleLobby" params={{id:"1"}}><div className='chat-join-button'>Join</div></RouterLink>
                     </tr>
                     <tr>
                         <td>Charlie</td>

@@ -5,10 +5,12 @@ import Game from "../components/Game";
 import { observer, inject } from "mobx-react";
 import { RouterView } from "mobx-state-router";
 import { RootStore } from "../models/Store";
+import BattleLobby from "../components/BattleLobby";
 
 const viewMap: any = {
   GameLobby: <GameLobby />,
-  GameJoin: <Game />
+  GameJoin: <Game />,
+  BattleLobby: <BattleLobby />
 };
 
 @observer

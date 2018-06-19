@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { RouterLink } from 'mobx-state-router';
 import '../App.css';
 
 class BattleLobby extends React.Component {
@@ -32,7 +32,9 @@ class BattleLobby extends React.Component {
                             <li>Bob</li>
                             
                         </ul>
-                        <div className="battle-ready-button">READY</div>
+                        <RouterLink routeName="GameJoin" params={{id:"1"}}>
+                            <div className="battle-ready-button">READY</div>
+                        </RouterLink>
                     </div>
                 </div>
             </div>
