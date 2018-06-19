@@ -16,10 +16,6 @@ const Transation = types.model({
   to_type: types.string
 });
 
-// TODO: move into state?
-let prevPage: string = "";
-let prevSubpage: string = "";
-
 // test eth netid "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f"
 // pages: ProfileMain, ChatMain, GameMain
 const Store = types
@@ -27,10 +23,6 @@ const Store = types
     balance: types.number,
     transactions: types.array(Transation),
     connected: false,
-    page: "ChatMain",
-    page_stateA: "",
-    page_stateB: "",
-    subpage: "",
     netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
     prvkey: "0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87"
   })
@@ -43,16 +35,6 @@ const Store = types
         self.netkey = netkey;
         self.prvkey = prvkey;
         l2.connect(self.prvkey);
-      },
-      setPage(page: string, subpage?: string, stateA?: string, stateB?: string): void {
-        console.log("changing page to " + page + ":" + subpage);
-        if (prevPage) console.log("page from ", prevPage, ":", prevSubpage);
-        prevPage = self.page;
-        prevSubpage = self.subpage;
-        self.page = page;
-        self.subpage = subpage || "";
-        self.page_stateA = stateA || "";
-        self.page_stateB = stateB || "";
       },
       createChannel(chan: Channel) {
         return l2.createChannel(chan);
