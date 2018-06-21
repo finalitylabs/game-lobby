@@ -8,6 +8,7 @@ class SpectateGameLobby extends React.Component<any, any> {
     return (
       <div className='spectate-game-lobby'>
         <h1>Active Games</h1>
+        <RouterLink routeName='GameLobby'><div className="chat-back">Back</div></RouterLink>
         <table>
           <tbody>
           <tr>

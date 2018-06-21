@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import {RouterLink} from 'mobx-state-router';
 import '../App.css';
 
 
@@ -9,6 +9,7 @@ export default class SpectateGameWindow extends React.Component<any, any> {
     return (
       <div className='spectate-game-window'>
         <h1>Spectating a Game!!</h1>
+        <RouterLink routeName='SpectateGameLobby'><div className="chat-back">Back</div></RouterLink>
         <div className='spectate-inner'>
           <div className='game-gif'/>
           <div className="chat-main">

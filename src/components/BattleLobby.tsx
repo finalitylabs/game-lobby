@@ -5,13 +5,13 @@ import '../App.css';
 class BattleLobby extends React.Component {
     public render() {
         return (
-            <div className='chatroom'>
+            <div className='chatroom'> 
                 <div className="chat-header">
                     <h1>Battle Lobby</h1>
                     <h2>Opponent: Bob</h2>
                     <h3>Wager: 3 ETH</h3>
                 </div>
-                    <div className="chat-back">Back</div>
+                    <RouterLink routeName='GameLobby'><div className="chat-back">Back</div></RouterLink>
                 <div className="chat-main">
                     <div className="chat-box">
                         <div className='chat-messages'>
