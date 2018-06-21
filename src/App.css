@@ -433,3 +433,57 @@
   cursor: pointer;
 }
 
+.spectate-game-lobby {
+  display: flex;
+  margin: 1em;
+  flex-direction: column;
+}
+
+.spectate-game-lobby table {
+  padding-right: 2em;
+}
+
+.spectate-game-window {
+  display: flex;
+  margin: 1em;
+  flex-direction: column;
+}
+
+.game-gif {
+  height: 446px;;
+  width: 669px;
+  background-image: url('./assets/hld.gif');
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+}
+
+.spectate-inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.spectate-chat-messages {
+  position: relative;
+  min-width: 300px;
+  min-height: 446px;
+  background: #333;
+  color: white;
+  border: 1px solid #640202; 
+  z-index: 1;
+}
+
+.spectate-chat-messages li {
+  list-style-type: none;
+}
+
+.chat-messages ul {
+  transform: translateX(-2em);
+}
+
+.spectate-chat-messages input {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 20px;
+}
+

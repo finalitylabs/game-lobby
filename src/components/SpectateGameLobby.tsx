@@ -13,7 +13,23 @@ class SpectateGameLobby extends React.Component<any, any> {
           <tr>
             <th>Game</th>
             <th>Duration</th>
-            <th>Bounty</th>
+            <th>Bounty </th>
+          </tr>
+          <tr>
+            <td>Hero Fighter</td>
+            <td>XX time</td>
+            <td>XX ETH</td>
+            <RouterLink routeName="SpectateGameWindow" params={{id:"1"}}>
+              <div className='chat-join-button'>Watch</div>
+            </RouterLink>
+          </tr>
+          <tr>
+            <td>Hero Fighter</td>
+            <td>XX time</td>
+            <td>XX ETH</td>
+            <RouterLink routeName="SpectateGameWindow" params={{id:"1"}}>
+              <div className='chat-join-button'>Watch</div>
+            </RouterLink>
           </tr>
           <tr>
             <td>Hero Fighter</td>
