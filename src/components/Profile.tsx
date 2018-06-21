@@ -92,6 +92,7 @@ class Profile extends React.Component<any, any> {
                         <td>Closed</td>
                     </tr>
                 </table> 
+                <a href="#" style={{paddingTop: '1em'}} rel="noopener">View more...</a>
             </div>
         );
     }
