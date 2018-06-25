@@ -14,6 +14,7 @@ class ChatRoom extends React.Component<any, any> {
             <div className='chatroom'>
                 <div className="chat-header">
                     <h1>Chat Room / Mr. Poopy Butthole</h1>
+                    
                     <RouterLink routeName="ChatLobby"><div className="chat-back">Back</div></RouterLink>
                 </div>
                 <div className="chat-main">
@@ -30,6 +31,7 @@ class ChatRoom extends React.Component<any, any> {
                     </div>
                     <div className="chat-users">
                         <h2>Users</h2>
+                        <p>Click User to view details</p>
                         <hr />
                         <ul>
                             <li><RouterLink routeName="ChatUserProfile" params={{id:"1"}}>Alice</RouterLink></li>

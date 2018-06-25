@@ -487,3 +487,16 @@
   height: 20px;
 }
 
+.send-eth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #640202;
+  padding: 0.5em;
+  box-shadow: 5px 5px 10px 3px rgba(0,0,0,0.3);
+  max-height: 20px;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+
