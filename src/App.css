@@ -224,6 +224,11 @@
   padding-right: 1em;
 }
 
+.chat-filter {
+  align-self: flex-start;
+  padding-bottom: 40px;
+}
+
 
 .spectate-button {
 
@@ -345,6 +350,25 @@
 
 .chat-users {
   min-width: 200px;
+}
+
+.chat-users ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.chat-users li {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.chat-users input {
+  max-width: 50px;
+}
+
+.chat-users-tip {
+  cursor: pointer;
 }
 
 .send-modal {
@@ -497,6 +521,14 @@
   max-height: 20px;
   max-width: 200px;
   cursor: pointer;
+}
+
+.send-eth {
+  margin-left: 40px;
+}
+
+.tipping {
+  display: flex;
 }
 
 

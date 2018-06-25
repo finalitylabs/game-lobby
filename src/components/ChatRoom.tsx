@@ -31,7 +31,6 @@ class ChatRoom extends React.Component<any, any> {
                     </div>
                     <div className="chat-users">
                         <h2>Users</h2>
-                        <p>Click User to view details</p>
                         <hr />
                         <ul>
                             <li><RouterLink routeName="ChatUserProfile" params={{id:"1"}}>Alice</RouterLink></li>

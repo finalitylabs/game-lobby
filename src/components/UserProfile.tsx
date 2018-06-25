@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import '../App.css';
 import { observer, inject } from "mobx-react";
+import { RouterLink } from 'mobx-state-router';
 //TODO back button
 @observer
 class UserProfile extends React.Component<any, any> {
@@ -18,10 +19,15 @@ class UserProfile extends React.Component<any, any> {
         return (
             <div className='explorer'>
                 <h2>Bob's Profile</h2>
-                <div className="profile-back">Back</div>  
+                <RouterLink routeName="ChatRoom" params={{id:"1"}}><div className="profile-back">Back</div></RouterLink>
                 <p><strong>Username:</strong> Bob</p>
                 <p><strong>Wallet Address:</strong> 0x...</p>
-                <div className="send-eth">Send ETH</div>
+             
+                    <form className="tipping">
+                        <input type="number" step="0.01"/>
+                        <div className="send-eth">Send ETH</div>
+                    </form>
+         
 
                 
                 <h2>Game Stats</h2>

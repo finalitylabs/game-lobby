@@ -12,8 +12,12 @@ class ChatLobby extends React.Component<any, any> {
                     <h3>Chat room name:</h3>
                     <input type="text" />   
                     </div>
-                    <div className='create-chat-button'>Create a Room</div>
+                    <div className='create-chat-button'>Create a Room</div>    
+                </div>
+                <div className='chat-filter'>
                     
+                    <input type="text" placeholder="Filter..."/>   
+                
                 </div>
                 <table>
                     <tbody>
