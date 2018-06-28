@@ -17,8 +17,8 @@ historyAdapter.observeRouterStateChanges();
 
 async function start():Promise<void> {
     // Observe history changes
-    await l2.connect(store.app.prvkey, 'Alice')
     await GS.connect();
+    await l2.connect(store.app.prvkey, 'Alice')
     
     // For testing connection only
     //const bal = await l2.getAgreementDetails() // l2.getBalance();

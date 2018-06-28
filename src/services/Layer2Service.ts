@@ -1,5 +1,7 @@
-import { default as Layer2lib, BrowserStorageProxy, Agreement } from "js-layer2lib";
-import * as localforage from "localforage";
+import { default as Layer2lib, Agreement } from "js-layer2lib";
+// import * as localforage from "localforage";
+import { GunStorageProxy } from "layer2storage";
+import GunService from "./GunService";
 // import { isAwaitExpression } from 'babel-types';
 
 export interface AgreementDetails {
@@ -25,7 +27,7 @@ export interface Channel {
 export type Agreement = Agreement;
 class Layer2Service {
   public connected: boolean = false;
-  public localStore: LocalForage;
+  // public localStore: LocalForage;
   private dbSalt: string = "Alice";
   constructor() {
     this.connected = false;
@@ -37,19 +39,21 @@ class Layer2Service {
     }
     this.dbSalt = dbSalt || this.dbSalt;
 
-    const localstore = localforage.createInstance({
+    /*const localstore = localforage.createInstance({
       driver: localforage.INDEXEDDB,
       name: "channel-explorer",
       version: 1.0,
       size: 4980736,
       storeName: "Wallet",
       description: "Stores data for layer2lib"
-    });
+    });*/
+    if (!GunService._gun) throw new Error("connect gun first");
+    const gun = GunService._gun;
     const options = {
-      db: new BrowserStorageProxy(localstore),
+      db: new GunStorageProxy(gun),
       privateKey
     };
-    this.localStore = localstore;
+    // this.localStore = localstore;
     l2 = new Layer2lib("http://127.0.0.1:8545", options);
     l2!.initGSC({});
     this.connected = true;
@@ -156,7 +160,7 @@ class Layer2Service {
     console.log("createAgreement options", JSON.stringify(agreementParams));
     // balanceA
 
-    await l2!.createGSCAgreement({ ...agreementParams }); // copy object
+    await l2!.storeGSCAgreement({ ...agreementParams }); // copy object
 
     // const entryID = agreementParams.ID + agreementParams.dbSalt;
     const agreement = await this.getAgreement(agreementParams.ID);
